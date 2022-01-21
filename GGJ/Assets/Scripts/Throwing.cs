@@ -12,11 +12,16 @@ public class Throwing : MonoBehaviour
     [SerializeField] private int pointNumber;
     public GameObject[] points;
     private BoxCollider2D _collider;
+    private Jewel jewelToPick;
     private bool aiming;
+    public bool pickJewel;
+    public bool hasJewel;
     
     // Start is called before the first frame update
     private void Start()
     {
+        hasJewel = true;
+        pickJewel = false;
         aiming = false;
         points = new GameObject[pointNumber];
         _collider = GetComponent<BoxCollider2D>();
@@ -30,44 +35,58 @@ public class Throwing : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (pickJewel)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 10f);
-            if(hit.collider.Equals(_collider))
+            if(Input.GetKeyDown(KeyCode.E))
             {
-                aiming = true;
-                foreach (GameObject point in points)
+                jewelToPick.Destruct();
+                jewelToPick = null;
+                hasJewel = true;
+                pickJewel = false;
+            }
+        }
+        else if (hasJewel)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 10f);
+                if (hit.collider.Equals(_collider))
                 {
-                    point.SetActive(true);
+                    aiming = true;
+                    foreach (GameObject point in points)
+                    {
+                        point.SetActive(true);
+                    }
+
+                }
+                //Show the trajectory
+            }
+
+            if (aiming)
+            {
+                for (int i = 0; i < pointNumber; i++)
+                {
+                    points[i].transform.position = PointPosition(i * 0.1f);
                 }
 
-            }
-            //Show the trajectory
-        }
-
-        if(aiming)
-        {
-            for (int i = 0; i < pointNumber; i++) 
-            {
-                points[i].transform.position = PointPosition(i * 0.1f);
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                //Hide the trajectory
-                aiming = false;
-            } else if (Input.GetMouseButtonUp(0))
-            {
-                aiming = false;
-                Shoot(Aim());
-            }
-
-            if(!aiming)
-            {
-                foreach (GameObject point in points)
+                if (Input.GetMouseButtonDown(1))
                 {
-                    point.SetActive(false);
+                    //Hide the trajectory
+                    aiming = false;
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    aiming = false;
+                    Shoot(Aim());
+                }
+
+                if (!aiming)
+                {
+                    foreach (GameObject point in points)
+                    {
+                        point.SetActive(false);
+                    }
                 }
             }
         }
@@ -90,10 +109,28 @@ public class Throwing : MonoBehaviour
 
         GameObject shotJewel = Instantiate(jewel, transform.position, Quaternion.identity);
         shotJewel.GetComponent<Rigidbody2D>().velocity = direction;
+        hasJewel = false;
     }
 
     private Vector2 PointPosition(float time)
     {
         return (Vector2)transform.position + Aim() * time + 0.5f * Physics2D.gravity * time * time;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Jewel")
+        {
+            pickJewel = true;
+            jewelToPick = collision.GetComponent<Jewel>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Jewel")
+        {
+            pickJewel = false;
+        }
     }
 }
