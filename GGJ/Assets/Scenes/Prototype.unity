@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpHeight: 5
+  jumpHeight: 3
   jumpTime: 0.5
   platformMask:
     serializedVersion: 2
