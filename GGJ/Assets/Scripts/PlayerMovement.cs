@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpSpeed;
     private float xAxis;
     private bool facingRight;
-    public Portal exit = null;
+    private Portal exit = null;
 
     private void Start()
     {

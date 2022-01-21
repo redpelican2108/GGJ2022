@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jewel : MonoBehaviour
 {
-    public Portal exit = null;
+    private Portal exit = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Portal" && exit == null)
