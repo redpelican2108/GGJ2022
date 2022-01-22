@@ -5003,3 +5003,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8042bec8cffeb47a0617f366dfc0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: -1580680260165731179}

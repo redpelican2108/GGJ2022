@@ -5,6 +5,7 @@ public class Jewel : MonoBehaviour
     private Portal exit = null;
     private PlayerMovement playerMovement;
     private Rigidbody2D rb;
+    public BoxCollider2D _collider;
 
     private void Start()
     {
@@ -29,6 +30,12 @@ public class Jewel : MonoBehaviour
         if (collision.tag == "Button")
         {
             collision.GetComponent<GameButton>().Press(true);
+        }
+
+        if (collision.tag == "Tornado")
+        {
+            collision.GetComponent<Tornado>().StartCount();
+            Destroy(this.gameObject);
         }
     }
 
