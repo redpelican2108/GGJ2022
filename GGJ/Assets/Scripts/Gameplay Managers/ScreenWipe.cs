@@ -14,6 +14,5 @@ public class ScreenWipe : MonoBehaviour
     public void WipeToBlack()
     {
         animator.SetTrigger("FadeToBlack");
-        
     }
 }
