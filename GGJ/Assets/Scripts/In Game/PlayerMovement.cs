@@ -104,6 +104,12 @@ public class PlayerMovement : MonoBehaviour
             exit = collision.GetComponent<Portal>().other;
             transform.position = exit.transform.position;
         }
+
+        if (collision.tag == "Button")
+        {
+            Debug.Log("pressed button");
+            collision.GetComponent<GameButton>().Press();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -111,6 +117,12 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Portal" && exit == collision.GetComponent<Portal>())
         {
             exit = null;
+        }
+
+        if (collision.tag == "Button")
+        {
+            Debug.Log("released button");
+            collision.GetComponent<GameButton>().Press();
         }
     }
 
