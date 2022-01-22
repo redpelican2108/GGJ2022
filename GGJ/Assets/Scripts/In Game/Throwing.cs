@@ -53,7 +53,7 @@ public class Throwing : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 10f);
-                if (hit.collider.Equals(_collider))
+                if (hit.collider != null && hit.collider.Equals(_collider))
                 {
                     aiming = true;
                     foreach (GameObject point in points)
