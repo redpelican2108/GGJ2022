@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float xAxis;
     private bool facingRight;
     private Portal exit = null;
+    private ScreenWipe screenWipe;
 
     private void Start()
     {
@@ -32,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
         stageComplete = false;
         gamePaused = false;
+
+        screenWipe = GameObject.FindGameObjectWithTag("ScreenWipe").GetComponent<ScreenWipe>();
     }
 
     private void Update()
@@ -104,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.tag == "Spikes")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(RestartLevel());
         }
 
         if (collision.tag == "Portal" && exit == null)
@@ -131,7 +135,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Dart")
         {
             Destroy(collision.gameObject);
-            //restart
+
+            // Restart the level
+            StartCoroutine(RestartLevel());
         }
     }
 
@@ -158,4 +164,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private IEnumerator RestartLevel()
+    {
+        screenWipe.WipeToBlack();
+        yield return new WaitForSeconds(0.9f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
