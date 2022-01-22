@@ -109,6 +109,11 @@ public class PlayerMovement : MonoBehaviour
         {
             collision.GetComponent<GameButton>().Press();
         }
+
+        if (collision.tag == "MovingPlatform")
+        {
+            transform.SetParent(collision.transform);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -121,6 +126,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Button")
         {
             collision.GetComponent<GameButton>().Press();
+        }
+
+        if (collision.tag == "MovingPlatform")
+        {
+            transform.SetParent(null);
         }
     }
 

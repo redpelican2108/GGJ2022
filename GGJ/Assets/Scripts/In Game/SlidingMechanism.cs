@@ -21,10 +21,4 @@ public class SlidingMechanism : Mechanism
             transform.localScale = new Vector3(currentScale, 1, 1);
         }
     }
-
-    public override void Activate()
-    {
-        activated = !activated;
-    }
-
 }

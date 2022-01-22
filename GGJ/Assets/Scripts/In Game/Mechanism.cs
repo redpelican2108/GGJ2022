@@ -17,5 +17,8 @@ public abstract class Mechanism : MonoBehaviour
         
     }
 
-    public abstract void Activate();
+    public void Activate()
+    {
+        activated = !activated;
+    }
 }
