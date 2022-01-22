@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight;
     private Portal exit = null;
     private ScreenWipe screenWipe;
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         screenWipe = GameObject.FindGameObjectWithTag("ScreenWipe").GetComponent<ScreenWipe>();
 
-        TurnUpsideDown();
+        //TurnUpsideDown();
     }
 
     private void Update()
