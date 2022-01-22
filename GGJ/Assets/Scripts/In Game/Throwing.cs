@@ -7,6 +7,7 @@ public class Throwing : MonoBehaviour
     [SerializeField] private float power;
     [SerializeField] private float minPower;
     [SerializeField] private float maxPower;
+    public GameObject jewelOnHead;
     public GameObject jewel;
     public GameObject point;
     [SerializeField] private int pointNumber;
@@ -42,6 +43,7 @@ public class Throwing : MonoBehaviour
                 jewelToPick.Destruct();
                 jewelToPick = null;
                 hasJewel = true;
+                jewelOnHead.SetActive(true);
                 pickJewel = false;
             }
         }
@@ -60,7 +62,6 @@ public class Throwing : MonoBehaviour
                     }
 
                 }
-                //Show the trajectory
             }
 
             if (aiming)
@@ -110,6 +111,7 @@ public class Throwing : MonoBehaviour
         GameObject shotJewel = Instantiate(jewel, transform.position, Quaternion.identity);
         shotJewel.GetComponent<Rigidbody2D>().velocity = direction;
         hasJewel = false;
+        jewelOnHead.SetActive(false);
     }
 
     private Vector2 PointPosition(float time)
