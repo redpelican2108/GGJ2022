@@ -18,4 +18,12 @@ public class Dart : MonoBehaviour
         rb.velocity = direction.normalized * speed;
         Destroy(gameObject, 3f);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("Platform"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

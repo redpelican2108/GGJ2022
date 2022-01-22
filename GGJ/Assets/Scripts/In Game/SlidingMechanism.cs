@@ -13,11 +13,11 @@ public class SlidingMechanism : Mechanism
     {
         if(activated && currentScale < maxScale)
         {
-            currentScale += .001f;
+            currentScale += .004f;
             transform.localScale = new Vector3(currentScale, 1, 1);
         } else if (!activated && currentScale > 1f)
         {
-            currentScale -= .001f;
+            currentScale -= .004f;
             transform.localScale = new Vector3(currentScale, 1, 1);
         }
     }

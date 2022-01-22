@@ -13,6 +13,9 @@ TagManager:
   - Dart
   - ScreenWipe
   - GameplayManager
+  - Gravity
+  - Tornado
+  - Platform
   layers:
   - Default
   - TransparentFX

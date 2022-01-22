@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7879150153393694091}
   - component: {fileID: 7879150153393694090}
   - component: {fileID: 7879150153393694089}
+  - component: {fileID: 2456399224962184852}
   m_Layer: 0
   m_Name: DartTrap
   m_TagString: DartTrap
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -6739563387075600313, guid: 24ec4429a6e1f464f916cbcc00e81bfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,3 +115,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dart: {fileID: 7271228842593094533, guid: b793cae10b472ef488eddf30f3c8389d, type: 3}
   fireRate: 1
+--- !u!61 &2456399224962184852
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879150153393694088}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
