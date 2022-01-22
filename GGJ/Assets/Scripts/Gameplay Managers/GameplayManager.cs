@@ -1,11 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
     public GameObject door;
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         // Restart the Level
@@ -13,5 +16,14 @@ public class GameplayManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    public IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(2);
+        // TODO: Screen Wipe
+
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
