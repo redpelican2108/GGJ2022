@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.tag == "Button")
         {
-            collision.GetComponent<GameButton>().Press();
+            collision.GetComponent<GameButton>().Press(true);
         }
 
         if (collision.tag == "MovingPlatform")
@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.tag == "Button")
         {
-            collision.GetComponent<GameButton>().Press();
+            collision.GetComponent<GameButton>().Press(false);
         }
 
         if (collision.tag == "MovingPlatform")

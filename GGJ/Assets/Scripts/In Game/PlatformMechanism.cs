@@ -9,7 +9,6 @@ public class PlatformMechanism : Mechanism
     public Transform green, yellow, platform;
     private Vector2 destination;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +40,31 @@ public class PlatformMechanism : Mechanism
                 }
             }
             platform.position = Vector2.MoveTowards(platform.position, destination, speed);
+        }
+    }
+
+    public override void OneTime()
+    {
+        if (movingToGreen)
+        {
+            destination = green.position;
+            movingToGreen = false;
+        }
+        else
+        {
+            destination = yellow.position;
+            movingToGreen = true;
+        }
+        StartCoroutine(Move());
+        
+    }
+
+    IEnumerator Move()
+    {
+        while (Vector2.Distance(platform.position, destination) > 0.1f)
+        {
+            platform.position = Vector2.MoveTowards(platform.position, destination, speed);
+            yield return null;
         }
     }
 }

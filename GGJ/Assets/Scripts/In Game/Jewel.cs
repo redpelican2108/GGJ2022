@@ -15,7 +15,7 @@ public class Jewel : MonoBehaviour
 
         if (collision.tag == "Button")
         {
-            collision.GetComponent<GameButton>().Press();
+            collision.GetComponent<GameButton>().Press(true);
         }
     }
 
@@ -28,7 +28,7 @@ public class Jewel : MonoBehaviour
 
         if (collision.tag == "Button")
         {
-            collision.GetComponent<GameButton>().Press();
+            collision.GetComponent<GameButton>().Press(false);
         }
     }
 

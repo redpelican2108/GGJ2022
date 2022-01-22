@@ -5,9 +5,19 @@ using UnityEngine;
 public class GameButton : MonoBehaviour
 {
     public Mechanism mechanism;
+    [SerializeField] private bool oneTime;
 
-    public void Press()
+    public void Press(bool enter)
     {
-        mechanism.Activate();
+        if (!oneTime)
+        {
+            mechanism.Activate();
+        } else
+        {
+            if (enter)
+            {
+                mechanism.OneTime();
+            }
+        }
     }
 }

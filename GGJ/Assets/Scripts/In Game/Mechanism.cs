@@ -21,4 +21,8 @@ public abstract class Mechanism : MonoBehaviour
     {
         activated = !activated;
     }
+
+    public virtual void OneTime()
+    {
+    }
 }
