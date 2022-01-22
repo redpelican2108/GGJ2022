@@ -122,6 +122,17 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.SetParent(collision.transform);
         }
+
+        if (collision.tag == "DartTrap")
+        {
+            collision.GetComponent<DartTrap>().Target(transform);
+        }
+
+        if (collision.tag == "Dart")
+        {
+            Destroy(collision.gameObject);
+            //restart
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
