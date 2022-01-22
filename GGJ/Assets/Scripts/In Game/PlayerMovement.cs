@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight;
     private Portal exit = null;
     private ScreenWipe screenWipe;
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
