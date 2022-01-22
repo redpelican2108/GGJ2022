@@ -11,6 +11,8 @@ TagManager:
   - MovingPlatform
   - DartTrap
   - Dart
+  - ScreenWipe
+  - GameplayManager
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        gameplayManager = GameObject.FindGameObjectWithTag("GameplayManager").GetComponent<GameplayManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

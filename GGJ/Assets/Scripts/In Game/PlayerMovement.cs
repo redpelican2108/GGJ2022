@@ -65,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("jump", true);
         }
+
+        if (stageComplete)
+        {
+            xAxis = 0;
+        }
     }
 
     private void GetMovementInputs()

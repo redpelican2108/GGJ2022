@@ -8,9 +8,11 @@ public class GameplayManager : MonoBehaviour
     public GameObject pauseMenu;
     private PlayerMovement playerMovement;
     private bool isGamePaused;
+    private ScreenWipe screenWipe;
     private void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        screenWipe = GameObject.FindGameObjectWithTag("ScreenWipe").GetComponent<ScreenWipe>();
 
         isGamePaused = false;
     }
@@ -50,8 +52,10 @@ public class GameplayManager : MonoBehaviour
 
     public IEnumerator NextLevel()
     {
-        yield return new WaitForSeconds(2);
-        // TODO: Screen Wipe
+        yield return new WaitForSeconds(1.5f);
+        
+        // Screen Wipe
+        screenWipe.WipeToBlack();
 
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

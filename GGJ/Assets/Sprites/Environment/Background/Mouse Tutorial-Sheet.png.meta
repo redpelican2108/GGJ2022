@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 1094851443413141822
     second: Mouse Tutorial-Sheet_2
+  - first:
+      213: 2028509641095812269
+    second: Mouse Tutorial-Sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +173,27 @@ TextureImporter:
       bones: []
       spriteID: e39c6764691b13f00800000000000000
       internalID: 1094851443413141822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouse Tutorial-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da498f465c6b62c10800000000000000
+      internalID: 2028509641095812269
       vertices: []
       indices: 
       edges: []
