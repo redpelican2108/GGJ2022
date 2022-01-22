@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float jumpTime;
     [SerializeField] private LayerMask platformMask;
+    public bool stageComplete;
+    public bool gamePaused;
     private Rigidbody2D rb;
     private BoxCollider2D _collider;
     private Animator animator;
@@ -27,11 +29,17 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.gravity = new Vector2(0, gravity);
 
         jumpSpeed =  -gravity * jumpTime;
+
+        stageComplete = false;
+        gamePaused = false;
     }
 
     private void Update()
     {
-        GetMovementInputs();
+        if (!stageComplete && !gamePaused)
+        {
+            GetMovementInputs();
+        }
 
         // Walking
         Move();
