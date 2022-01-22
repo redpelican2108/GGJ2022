@@ -107,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.tag == "Button")
         {
-            Debug.Log("pressed button");
             collision.GetComponent<GameButton>().Press();
         }
     }
@@ -121,7 +120,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.tag == "Button")
         {
-            Debug.Log("released button");
             collision.GetComponent<GameButton>().Press();
         }
     }

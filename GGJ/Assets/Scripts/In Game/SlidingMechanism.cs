@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlidingMechanism : Mechanism
 {
     [SerializeField] private float maxScale;
-    public float currentScale = 1f;
+    private float currentScale = 1f;
     // Start is called before the first frame update
 
     // Update is called once per frame

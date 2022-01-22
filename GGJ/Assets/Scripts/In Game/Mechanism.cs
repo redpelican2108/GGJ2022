@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Mechanism : MonoBehaviour
 {
-    public bool activated = false;
+    protected bool activated = false;
     // Start is called before the first frame update
     void Start()
     {
