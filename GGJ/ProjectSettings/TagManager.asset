@@ -8,6 +8,9 @@ TagManager:
   - Portal
   - Jewel
   - Button
+  - MovingPlatform
+  - DartTrap
+  - Dart
   layers:
   - Default
   - TransparentFX
