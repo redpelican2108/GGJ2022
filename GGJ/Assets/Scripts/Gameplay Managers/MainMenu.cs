@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        StartCoroutine(ActuallyPlayGame(11));
+        StartCoroutine(ActuallyPlayGame(1));
     }
 
     public IEnumerator ActuallyPlayGame(int sceneNumber)
@@ -23,8 +23,8 @@ public class MainMenu : MonoBehaviour
         // Play Screen Wipe
         screenWipe.WipeToBlack();
 
-        // Wait for 1 Second
-        yield return new WaitForSeconds(1);
+        // Wait for 0.9 Seconds
+        yield return new WaitForSeconds(0.9f);
 
         // Load Next Scene
         SceneManager.LoadScene(sceneNumber);
