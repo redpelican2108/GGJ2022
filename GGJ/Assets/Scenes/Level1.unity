@@ -3921,6 +3921,10 @@ PrefabInstance:
       value: Sliding Platform
       objectReference: {fileID: 0}
     - target: {fileID: 2574253926315833497, guid: 6593a7e781a61624b91b685378035a4f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -272974019776393368, guid: 529d455772f24e74b9d38c4803768833, type: 3}
+    - target: {fileID: 2574253926315833497, guid: 6593a7e781a61624b91b685378035a4f, type: 3}
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
