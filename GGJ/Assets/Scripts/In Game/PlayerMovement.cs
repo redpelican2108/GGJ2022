@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpTime;
     [SerializeField] private LayerMask platformMask;
     public bool stageComplete;
+    public bool gamePaused;
     private Rigidbody2D rb;
     private BoxCollider2D _collider;
     private Animator animator;
@@ -30,11 +31,12 @@ public class PlayerMovement : MonoBehaviour
         jumpSpeed =  -gravity * jumpTime;
 
         stageComplete = false;
+        gamePaused = false;
     }
 
     private void Update()
     {
-        if (!stageComplete)
+        if (!stageComplete && !gamePaused)
         {
             GetMovementInputs();
         }

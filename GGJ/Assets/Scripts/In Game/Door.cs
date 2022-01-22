@@ -17,6 +17,7 @@ public class Door : MonoBehaviour
             {
                 other.GetComponent<PlayerMovement>().stageComplete = true;
                 animator.SetTrigger("Open");
+                StartCoroutine(gameplayManager.NextLevel());
             }
         }
     }
