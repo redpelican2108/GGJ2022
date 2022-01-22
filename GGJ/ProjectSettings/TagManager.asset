@@ -8,6 +8,8 @@ TagManager:
   - Portal
   - Jewel
   - Button
+  - MovingPlatform
+  - ScreenWipe
   layers:
   - Default
   - TransparentFX
