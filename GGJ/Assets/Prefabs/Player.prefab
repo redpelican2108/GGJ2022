@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 709611536832124935}
   - component: {fileID: 709611536832124984}
   - component: {fileID: 709611536832124933}
+  - component: {fileID: 6171540976701974197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpHeight: 3
+  jumpHeight: 2
   jumpTime: 0.5
   platformMask:
     serializedVersion: 2
@@ -170,3 +171,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6171540976701974197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709611536832124987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a4bd5bd210d6f47834f55a8bc1b2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 5
+  minPower: 10
+  maxPower: 25
+  jewel: {fileID: 3189088261923219347, guid: c08e495eefa999349bce2d1065b996e4, type: 3}
+  point: {fileID: 2553065687493936610, guid: 662c2059a4cd6234094ba922cb335f4e, type: 3}
+  pointNumber: 7
+  points: []
+  pickJewel: 0
+  hasJewel: 0
