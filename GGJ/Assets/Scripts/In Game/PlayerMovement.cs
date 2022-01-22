@@ -151,6 +151,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.SetParent(null);
         }
+
+        if (collision.tag == "DartTrap")
+        {
+            collision.GetComponent<DartTrap>().Stop();
+        }
     }
 
 }

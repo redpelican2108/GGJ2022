@@ -9,7 +9,8 @@ TagManager:
   - Jewel
   - Button
   - MovingPlatform
-  - ScreenWipe
+  - DartTrap
+  - Dart
   layers:
   - Default
   - TransparentFX
