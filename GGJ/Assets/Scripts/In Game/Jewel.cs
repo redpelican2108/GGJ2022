@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Jewel : MonoBehaviour
 {
     private Portal exit = null;
+    private PlayerMovement playerMovement;
+
+    private void Start()
+    {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Portal" && exit == null)
@@ -34,6 +39,10 @@ public class Jewel : MonoBehaviour
 
     public void Destruct()
     {
+        StartCoroutine(playerMovement.RestartLevel());
+
+        // TODO: Animation and sound of breaking
+        // DONT BREAK THIS YET!!!
         Destroy(this.gameObject);
     }
 }

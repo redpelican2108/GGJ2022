@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator RestartLevel()
+    public IEnumerator RestartLevel()
     {
         screenWipe.WipeToBlack();
         yield return new WaitForSeconds(0.9f);
