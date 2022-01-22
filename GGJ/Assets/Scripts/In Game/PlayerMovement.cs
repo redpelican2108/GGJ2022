@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask platformMask;
     public bool stageComplete;
     public bool gamePaused;
+    public bool isUpsideDown;
     private Rigidbody2D rb;
     private BoxCollider2D _collider;
     private Animator animator;
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         gamePaused = false;
 
         screenWipe = GameObject.FindGameObjectWithTag("ScreenWipe").GetComponent<ScreenWipe>();
+
+        TurnUpsideDown();
     }
 
     private void Update()
@@ -173,6 +176,16 @@ public class PlayerMovement : MonoBehaviour
         {
             collision.GetComponent<DartTrap>().Stop();
         }
+    }
+
+    public void TurnUpsideDown()
+    {
+        rb.gravityScale = -1;
+
+        // Multiply the player's y local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.y *= -1;
+        transform.localScale = theScale;
     }
 
     public IEnumerator RestartLevel()
