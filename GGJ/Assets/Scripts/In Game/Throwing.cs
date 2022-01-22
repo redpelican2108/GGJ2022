@@ -13,6 +13,7 @@ public class Throwing : MonoBehaviour
     [SerializeField] private int pointNumber;
     public GameObject[] points;
     private BoxCollider2D _collider;
+    private Rigidbody2D rb;
     private Jewel jewelToPick;
     private bool aiming;
     public bool pickJewel;
@@ -26,6 +27,7 @@ public class Throwing : MonoBehaviour
         aiming = false;
         points = new GameObject[pointNumber];
         _collider = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
         for(int i = 0; i < pointNumber; i++)
         {
             points[i] = Instantiate(point, transform.position, Quaternion.identity);

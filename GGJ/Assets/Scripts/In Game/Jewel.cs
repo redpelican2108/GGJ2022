@@ -37,6 +37,11 @@ public class Jewel : MonoBehaviour
             collision.GetComponent<Tornado>().StartCount();
             Destroy(this.gameObject);
         }
+
+        if (collision.tag == "Gravity")
+        {
+            Physics2D.gravity = new Vector3(0f, -9.81f, 0f);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -35,10 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         stageComplete = false;
         gamePaused = false;
+        isUpsideDown = false;
 
         screenWipe = GameObject.FindGameObjectWithTag("ScreenWipe").GetComponent<ScreenWipe>();
-
-        TurnUpsideDown();
     }
 
     private void Update()
@@ -54,7 +53,13 @@ public class PlayerMovement : MonoBehaviour
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            if (!isUpsideDown)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            } else
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -jumpSpeed);
+            }
         }
 
         // Animation
@@ -107,8 +112,16 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float delta = 0.1f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0f, Vector2.down, delta, platformMask);
+        float delta = 0.5f;
+        RaycastHit2D raycastHit;
+        if (!isUpsideDown)
+        {
+            raycastHit = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0f, Vector2.down, delta, platformMask);
+        } 
+        else
+        {
+            raycastHit = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0f, Vector2.up, delta, platformMask);
+        }
         return raycastHit;
     }
 
@@ -153,6 +166,14 @@ public class PlayerMovement : MonoBehaviour
             // Restart the level
             StartCoroutine(RestartLevel());
         }
+
+        if (collision.tag == "Gravity")
+        {
+            Destroy(collision.gameObject);
+            isUpsideDown = !isUpsideDown;
+            TurnUpsideDown();
+            
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -180,8 +201,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TurnUpsideDown()
     {
-        rb.gravityScale = -1;
-
+        rb.gravityScale = -rb.gravityScale;
         // Multiply the player's y local scale by -1.
         Vector3 theScale = transform.localScale;
         theScale.y *= -1;
