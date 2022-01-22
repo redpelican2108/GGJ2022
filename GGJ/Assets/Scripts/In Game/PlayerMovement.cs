@@ -115,6 +115,12 @@ public class PlayerMovement : MonoBehaviour
         {
             exit = collision.GetComponent<Portal>().other;
             transform.position = exit.transform.position;
+            if (exit.oneTime)
+            {
+                Destroy(collision.gameObject);
+                Destroy(exit.gameObject);
+                exit = null;
+            }
         }
 
         if (collision.tag == "Button")

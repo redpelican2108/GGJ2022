@@ -5,4 +5,6 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public Portal other;
+    public bool oneTime;
+    public int exitDirection;
 }

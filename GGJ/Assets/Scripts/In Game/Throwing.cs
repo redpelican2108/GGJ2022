@@ -40,7 +40,7 @@ public class Throwing : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                jewelToPick.Destruct();
+                jewelToPick.PickUp();
                 jewelToPick = null;
                 hasJewel = true;
                 jewelOnHead.SetActive(true);

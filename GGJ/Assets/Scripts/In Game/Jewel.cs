@@ -4,10 +4,12 @@ public class Jewel : MonoBehaviour
 {
     private Portal exit = null;
     private PlayerMovement playerMovement;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +18,12 @@ public class Jewel : MonoBehaviour
         {
             exit = collision.GetComponent<Portal>().other;
             transform.position = exit.transform.position;
+            if (exit.oneTime)
+            {
+                Destroy(collision.gameObject);
+                Destroy(exit.gameObject);
+                exit = null;
+            }
         }
 
         if (collision.tag == "Button")
@@ -28,6 +36,7 @@ public class Jewel : MonoBehaviour
     {
         if(collision.tag == "Portal" && exit == collision.GetComponent<Portal>())
         {
+            
             exit = null;
         }
 
@@ -43,6 +52,11 @@ public class Jewel : MonoBehaviour
 
         // TODO: Animation and sound of breaking
         // DONT BREAK THIS YET!!!
+        Destroy(this.gameObject);
+    }
+
+    public void PickUp()
+    {
         Destroy(this.gameObject);
     }
 }
