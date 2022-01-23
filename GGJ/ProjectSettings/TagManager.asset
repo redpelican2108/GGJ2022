@@ -16,7 +16,7 @@ TagManager:
   - Gravity
   - Tornado
   - Platform
-  - Interactables
+  - Skull
   layers:
   - Default
   - TransparentFX

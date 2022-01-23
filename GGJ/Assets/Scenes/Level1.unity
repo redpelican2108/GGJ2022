@@ -4231,6 +4231,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2574253926287977573, guid: 6593a7e781a61624b91b685378035a4f, type: 3}
+      propertyPath: inX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574253926287977573, guid: 6593a7e781a61624b91b685378035a4f, type: 3}
       propertyPath: maxScale
       value: 20
       objectReference: {fileID: 0}

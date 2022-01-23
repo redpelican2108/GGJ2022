@@ -58,13 +58,20 @@ public class Jewel : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Skull"))
+        {
+            Destruct();
+        }
+    }
     public void Destruct()
     {
         StartCoroutine(playerMovement.RestartLevel());
 
         // TODO: Animation and sound of breaking
         // DONT BREAK THIS YET!!!
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 
     public void PickUp()
