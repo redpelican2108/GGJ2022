@@ -6456,7 +6456,9 @@ MonoBehaviour:
   lst:
   - You finally found the jewel! It's all yours!          (Press Space to Continue)
   - But as it leaves its pedestal, you realise that you went in the easy way...
-  - Be wary of the road out...
+  - 'There are so many traps to survive on your way out! '
+  - And, looking at this huge gem, you start to wonder...
+  - if it can do more than simply look pretty in your hands.
   canvas: {fileID: 1877935320}
   displayText: {fileID: 1171965797}
   playerMovement: {fileID: 1673465848}
