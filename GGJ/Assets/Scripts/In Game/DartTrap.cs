@@ -16,7 +16,8 @@ public class DartTrap : MonoBehaviour
         {
             Shoot();
             time += fireRate;
-        } else
+        }
+        else
         {
             time -= Time.deltaTime;
         }
