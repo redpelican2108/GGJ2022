@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CodeManager : MonoBehaviour
 {
@@ -15,10 +16,21 @@ public class CodeManager : MonoBehaviour
     }
     public void CheckPuzzleSolved()
     {
-        if (!finalLevers[0].isOn && finalLevers[1].isOn && !finalLevers[2].isOn && !finalLevers[3].isOn && finalLevers[4].isOn)
+        if (SceneManager.GetActiveScene().buildIndex == 9)
         {
-            puzzleSolved = true;
-            StartCoroutine(UnlockDoor());
+            if (!finalLevers[0].isOn && finalLevers[1].isOn && !finalLevers[2].isOn && !finalLevers[3].isOn && finalLevers[4].isOn)
+            {
+                puzzleSolved = true;
+                StartCoroutine(UnlockDoor());
+            }
+        }
+        else
+        {
+            if (finalLevers[0].isOn && !finalLevers[1].isOn && !finalLevers[2].isOn && finalLevers[3].isOn)
+            {
+                puzzleSolved = true;
+                StartCoroutine(UnlockDoor());
+            }
         }
     }
 

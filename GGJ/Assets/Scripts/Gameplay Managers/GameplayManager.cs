@@ -36,10 +36,12 @@ public class GameplayManager : MonoBehaviour
         if (!isGamePaused)
         {
             pauseMenu.SetActive(true);
+            playerMovement.gamePaused = true;
         }
         else
         {
             pauseMenu.SetActive(false);
+            playerMovement.gamePaused = true;
         }
 
         isGamePaused = !isGamePaused;

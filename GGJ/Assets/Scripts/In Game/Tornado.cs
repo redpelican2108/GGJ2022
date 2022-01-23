@@ -8,6 +8,7 @@ public class Tornado : MonoBehaviour
     private BoxCollider2D _collider;
     private float timer;
     public GameObject jewel;
+    public GameObject imageOfJewel;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class Tornado : MonoBehaviour
     public void StartCount()
     {
         _collider.isTrigger = false;
+        imageOfJewel.SetActive(true);
         StartCoroutine(CountDown());
     }
     
