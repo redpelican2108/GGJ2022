@@ -168,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.tag == "Gravity")
         {
+            transform.position = collision.transform.position;
             Destroy(collision.gameObject);
             isUpsideDown = !isUpsideDown;
             TurnUpsideDown();
