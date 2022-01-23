@@ -17,6 +17,7 @@ TagManager:
   - Tornado
   - Platform
   - Skull
+  - Interactables
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Platforms
   - Water
   - UI
-  - 
-  - 
+  - Ignore
+  - Player
   - 
   - 
   - 

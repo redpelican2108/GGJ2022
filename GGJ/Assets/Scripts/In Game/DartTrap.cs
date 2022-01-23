@@ -5,17 +5,20 @@ using UnityEngine;
 public class DartTrap : MonoBehaviour
 {
     public GameObject dart;
-    public bool inRange = false;
+    private bool inRange = false;
     [SerializeField] private float fireRate;
-    public float time = 0f;
+    private float time = 0f;
     private Transform target;
     // Update is called once per frame
     void Update()
     {
-        if(inRange && time <= 0f)
+        if(time <= 0f)
         {
-            Shoot();
-            time += fireRate;
+            if (inRange)
+            {
+                Shoot();
+                time += fireRate;
+            }
         }
         else
         {
