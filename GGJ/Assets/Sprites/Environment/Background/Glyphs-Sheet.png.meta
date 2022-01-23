@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 794c6be5a55a026409a27cd973e3882f
+guid: 2c25bdede1a7a3c489641a418c660eb3
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -17,6 +17,24 @@ TextureImporter:
   - first:
       213: -4735837557415393406
     second: Glyphs-Sheet_4
+  - first:
+      213: 3557969065940255198
+    second: Glyphs-Sheet_5
+  - first:
+      213: 1463308296218350024
+    second: Glyphs-Sheet_6
+  - first:
+      213: 7877567479747757924
+    second: Glyphs-Sheet_7
+  - first:
+      213: -2816273981083453380
+    second: Glyphs-Sheet_8
+  - first:
+      213: -2086113448402014052
+    second: Glyphs-Sheet_9
+  - first:
+      213: 3793847780262632565
+    second: Glyphs-Sheet_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -218,6 +236,132 @@ TextureImporter:
       bones: []
       spriteID: 2874d4445dce64eb0800000000000000
       internalID: -4735837557415393406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glyphs-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed18239b302706130800000000000000
+      internalID: 3557969065940255198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glyphs-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c11af87427be4410800000000000000
+      internalID: 1463308296218350024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glyphs-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467c88cb2edb25d60800000000000000
+      internalID: 7877567479747757924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glyphs-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3878574cb59ae8d0800000000000000
+      internalID: -2816273981083453380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glyphs-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9035d21fd2ac03e0800000000000000
+      internalID: -2086113448402014052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glyphs-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c557a947476a430800000000000000
+      internalID: 3793847780262632565
       vertices: []
       indices: 
       edges: []
