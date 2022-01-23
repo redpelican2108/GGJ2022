@@ -9,6 +9,10 @@ public class GameButton : MonoBehaviour
 
     public void Press(bool enter)
     {
+        if(mechanism == null)
+        {
+            return;
+        }
         if (!oneTime)
         {
             mechanism.Activate();
