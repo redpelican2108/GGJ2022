@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 5
+  _collider: {fileID: 2337521896613632403}
   jewel: {fileID: 3189088261923219347, guid: c08e495eefa999349bce2d1065b996e4, type: 3}
 --- !u!61 &2337521896613632403
 BoxCollider2D:

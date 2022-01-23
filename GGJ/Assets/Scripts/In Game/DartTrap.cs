@@ -6,7 +6,7 @@ public class DartTrap : MonoBehaviour
 {
     public GameObject dart;
     private bool inRange = false;
-    [SerializeField] private float fireRate = 2.0f;
+    [SerializeField] private float fireRate;
     private float time = 0f;
     private Transform target;
     // Update is called once per frame
