@@ -13,6 +13,14 @@ public class FinalLever : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (Input.GetKeyDown(KeyCode.F) && other.gameObject.CompareTag("Player"))
+        {
+            Interact();
+        }
+    }
     public void Interact()
     {
         if (!codeManager.puzzleSolved)

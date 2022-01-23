@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CodeManager : MonoBehaviour
@@ -8,17 +9,24 @@ public class CodeManager : MonoBehaviour
     public bool puzzleSolved;
     private AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void CheckPuzzleSolved()
     {
-        if (!finalLevers[0] && finalLevers[1] && !finalLevers[2] && !finalLevers[3] && finalLevers[4])
+        if (!finalLevers[0].isOn && finalLevers[1].isOn && !finalLevers[2].isOn && !finalLevers[3].isOn && finalLevers[4].isOn)
         {
             puzzleSolved = true;
+            StartCoroutine(UnlockDoor());
         }
     }
 
-    public void UnlockDoor()
+    public IEnumerator UnlockDoor()
     {
         audioSource.PlayOneShot(audioClip);
         animator.SetTrigger("OpenDoor");
+        yield return new WaitForSeconds(1);
+        Destroy(animator.gameObject);
     }
 }

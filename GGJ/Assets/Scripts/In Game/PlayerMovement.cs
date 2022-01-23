@@ -200,10 +200,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.F) && other.CompareTag("Interactables"))
-        {
-            other.GetComponent<FinalLever>().Interact();
-        }
+
     }
 
     public void TurnUpsideDown()
