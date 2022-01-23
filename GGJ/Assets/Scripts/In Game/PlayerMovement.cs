@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
         jumpSpeed =  -gravity * jumpTime;
 
-        stageComplete = false;
         gamePaused = false;
         isUpsideDown = false;
 
@@ -51,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && !stageComplete && !gamePaused)
         {
             if (!isUpsideDown)
             {
