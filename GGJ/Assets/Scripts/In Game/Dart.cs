@@ -19,9 +19,14 @@ public class Dart : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.collider.CompareTag("Platform"))
+        if(collision.CompareTag("Platform"))
+        {
+            Destroy(this.gameObject);
+        }
+
+        if(collision.CompareTag("MovingPlatform"))
         {
             Destroy(this.gameObject);
         }
