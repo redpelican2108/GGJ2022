@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float delta = 0.5f;
+        float delta = 0.1f;
         RaycastHit2D raycastHit;
         if (!isUpsideDown)
         {
