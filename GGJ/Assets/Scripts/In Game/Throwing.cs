@@ -123,6 +123,15 @@ public class Throwing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Portal"))
+        {
+            if(collision.GetComponent<Portal>().oneTime)
+            {
+                GameObject shotJewel = Instantiate(jewel, collision.transform.position, Quaternion.identity);
+                hasJewel = false;
+                jewelOnHead.SetActive(false);
+            }
+        }
         if(collision.tag == "Jewel")
         {
             pickJewel = true;

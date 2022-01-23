@@ -6,11 +6,13 @@ public class GameButton : MonoBehaviour
 {
     public Mechanism mechanism;
     [SerializeField] private bool oneTime;
+    [SerializeField] private bool destroyOnPush;
 
     public void Press(bool enter)
     {
         if(mechanism == null)
         {
+            Destroy(this.gameObject);
             return;
         }
         if (!oneTime)
@@ -22,6 +24,11 @@ public class GameButton : MonoBehaviour
             {
                 mechanism.OneTime();
             }
+        }
+        
+        if(destroyOnPush)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
