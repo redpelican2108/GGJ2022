@@ -6,7 +6,7 @@ public class LeverGroup : MonoBehaviour
 {
     public Lever[] levers;
     [SerializeField] private bool[] combination;
-    public Mechanism mechanism;
+    public Mechanism[] mechanism;
 
     public void Check()
     {
@@ -17,6 +17,8 @@ public class LeverGroup : MonoBehaviour
                 return;
             }
         }
-        mechanism.OneTime();
+        foreach (Mechanism mech in mechanism) {
+            mech.Activate();
+        }
     }
 }

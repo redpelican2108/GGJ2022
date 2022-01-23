@@ -6,12 +6,17 @@ public class PlatformMechanism : Mechanism
 {
     [SerializeField] private bool movingToGreen;
     [SerializeField] private float speed;
+    [SerializeField] private bool isActivated;
     public Transform green, yellow, platform;
     private Vector2 destination;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(isActivated)
+        {
+            activated = true;
+        }
         if(movingToGreen)
         {
             destination = green.position;
