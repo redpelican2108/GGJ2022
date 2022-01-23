@@ -198,6 +198,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void OnTriggerStay2D(Collider2D other)
+    {
+
+    }
+
     public void TurnUpsideDown()
     {
         rb.gravityScale = -rb.gravityScale;

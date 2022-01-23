@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BGMPlayer : MonoBehaviour
 {
-    public BGMPlayer instance;
+    public static BGMPlayer instance;
 
     public void Start()
     {
