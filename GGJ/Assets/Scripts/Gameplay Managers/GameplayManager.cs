@@ -41,7 +41,7 @@ public class GameplayManager : MonoBehaviour
         else
         {
             pauseMenu.SetActive(false);
-            playerMovement.gamePaused = true;
+            playerMovement.gamePaused = false;
         }
 
         isGamePaused = !isGamePaused;

@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         canvas.SetActive(false);
+        displayText.text = "";
         playerMovement.stageComplete = false;
     }
 }
